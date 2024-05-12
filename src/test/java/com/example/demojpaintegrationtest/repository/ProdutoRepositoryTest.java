@@ -34,10 +34,10 @@ class ProdutoRepositoryTest {
         produto.setStatus(Status.ATIVO);
         produto.setTemperatura(55.23f);
         produto.setTemperatura('B');
-        produto.setDescricao("Produto B");
+        produto.setDescricao("Produto BCDE");
 
         Produto result =  repository.save(produto);
-        System.out.println(result);
+        System.out.println(result.toString());
         Assertions.assertNotNull(result);
         Assertions.assertTrue(produto.isAtivo() == result.isAtivo());
 

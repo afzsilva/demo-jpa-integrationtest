@@ -2,6 +2,7 @@ package com.example.demojpaintegrationtest.controller;
 
 import com.example.demojpaintegrationtest.entities.Produto;
 import com.example.demojpaintegrationtest.repository.ProdutoRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +18,7 @@ public class ProdutoController {
     private ProdutoRepository repository;
 
     @PostMapping
-    public ResponseEntity<Produto> salvar(@RequestBody Produto produto){
+    public ResponseEntity<Produto> salvar(@RequestBody @Valid Produto produto){
         Produto psalvo = repository.save(produto);
         return ResponseEntity.ok(psalvo);
     }

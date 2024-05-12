@@ -1,6 +1,8 @@
 package com.example.demojpaintegrationtest.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.AssertFalse;
+import jakarta.validation.constraints.Null;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,12 +25,26 @@ public class Produto {
     @Column(nullable = false)
     private String descricao;
 
+    @Column(nullable = false)
     private char tipo;
+
+    @Column(nullable = false)
     private LocalDate dataFabricacao;
+
+    @AssertFalse
+    @Column(nullable = false)
     private boolean ativo;
-    private double preco;
+
+    @Column(nullable = false)
+    private double preco; // aconselhavel BigDecimal
+
+    @Column(nullable = true)
     private float temperatura;
+
+    @Column(nullable = true)
     private int quantidade;
+
+    @Column(nullable = false)
     private Status status;
 
 }
