@@ -46,7 +46,5 @@ public class Produto {
 
     @Column(nullable = false)
     private Status status;
-
-
 }
 
